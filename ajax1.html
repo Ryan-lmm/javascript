@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        h1{
+            text-align:center;
+        }
+
+        p{
+            margin:0 auto;
+            text-align: left;
+        }
+    </style>
+    <h1>TESTE</h1>
+
+    <p id="obj">hi</p>
+
+    <script>
+        var request = new XMLHttpRequest();
+        var text = document.getElementById('obj');
+
+        request.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+
+        request.onload = function(){
+            if(this.status >= 200 && this.status < 400){
+                var data = JSON.parse(this.response);
+                text.innerText = (this.responseText)
+                
+                setTimeout(function(){
+                    console.log('Concluido');
+                    setTimeout(function(){
+                        console.log(data)
+                    },2000)
+                }, 1000)
+            }else{
+                console.log('falhou');
+            }
+        }
+
+        request.onerror = function(){
+
+        }
+
+        request.send();
+
+
+    </script>
+</body>
+
+</html>
