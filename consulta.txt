@@ -1,0 +1,83 @@
+var elementos = document.querySelectorAll('.player-options div > img');
+var inimigo = document.querySelectorAll('.enemy-options div');
+var screenS = document.querySelector('.screenScore h1:nth-of-type(1)');
+var screenSegundo = document.querySelector('.screenScore h1:nth-of-type(2)');
+var enemyOpt = "";
+var playerOpt = "";
+
+
+function premio(){
+
+    let score = document.querySelector('p');
+
+    if(playerOpt == 'pedra'){
+        if(enemyOpt == 'pedra'){
+            score.innerHTML = 'empate';
+        }
+        else if(enemyOpt == 'papel'){
+            score.innerHTML ='inimigo ganhou';
+        }else if(enemyOpt == 'tesoura'){
+            score.innerHTML ='player ganhou';
+        }
+    }
+
+    if(playerOpt == 'papel'){
+        if(enemyOpt == 'papel'){
+            score.innerHTML ='empate';
+        }
+        else if(enemyOpt == 'tesoura'){
+            score.innerHTML ='inimigo ganhou';
+        }else if(enemyOpt == 'pedra'){
+            score.innerHTML ='player ganhou';
+        }
+    }
+
+    if(playerOpt == 'tesoura'){
+        if(enemyOpt == 'tesoura'){
+            score.innerHTML = 'empate';
+        }
+        else if(enemyOpt == 'pedra'){
+            score.innerHTML = 'inimigo ganhou';
+        }else if(enemyOpt == 'papel'){
+            score.innerHTML ='player ganhou';
+        }
+    }
+}
+
+function resetOpacity(){
+    for(var i = 0; i < elementos.length; i++){
+        elementos[i].style.opacity = 0.3;
+    }
+}
+
+function resetIni(){
+    for(var i = 0; i < inimigo.length; i++){
+        inimigo[i].childNodes[0].style.opacity = 0.3;
+    }
+}
+
+function inimigoJogar(){
+    let rand = Math.floor(Math.random()*3);
+    resetIni();
+
+    for(var i = 0; i < inimigo.length; i++){
+        if(i == rand){
+           inimigo[i].childNodes[0].style.opacity = 1;
+           enemyOpt = inimigo[i].childNodes[0].getAttribute('opt');
+           screenSegundo.innerHTML = 'o inimigo jogou '+enemyOpt;
+        }
+        
+    }
+}
+
+for(var i = 0; i < elementos.length; i++){
+   elementos[i].addEventListener('click', function(t){
+    resetOpacity();
+    t.target.style.opacity = 1;
+
+    playerOpt = t.target.getAttribute('opt');
+    screenS.innerHTML = 'o player jogou '+playerOpt;
+    inimigoJogar();
+    premio();
+   })
+}

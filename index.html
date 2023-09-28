@@ -1,80 +1,73 @@
 <html>
+    <head>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .single_produto {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2%;
-            background-color: rgb(6, 197, 197);
-            color:white;
-        }
+    </head>
+    <body>
+        <style>
+            h1{
+                text-align: center;
+            }
 
-        .single_produto p {
-            margin-left: 290px;
-            font-weight: bold;
-            font-size: 18px;
-            padding:0 2%;
-            
-        }
+            p{
+                text-align: center;
+                font-size:23px;
 
-        input[type=text] {
-            padding: 2%;
-        }
+            }
 
-        input[type=number]:nth-of-type(2) {
-           width:90px;
-           padding:2%;
-        }
+            .player-options img,
+            .enemy-options img{
+                max-width: 200px;
+                opacity: 0.3;
+                cursor:pointer;
+                padding:2%;
+            }
 
-        input[type=number]:nth-of-type(3) {
-            padding: 2%;
-        }
+            .player-options,.enemy-options{
+                width:50%;
+                text-align: center;
+                padding-top:2%;
+            }
 
-        input[type=submit] {
-            background-color: aqua;
-            cursor: pointer;
-            padding: 2%;
-        }
+            .align{
+                display:flex;
+                
+            }
 
-        .total{
-            font-size:20px;
-            font-weight: bold;
-        }
+            .screenScore{
 
-        .limpar{
-            margin:30px 0;
-            padding:2%;
-            cursor:pointer;
-        }
-       
-    </style>
-</head>
+                display: flex;
+                justify-content: center;
+                
 
-<body>
-    <header>
-        <h2 >&nbsp;&nbsp;App lista de supermercado</h2>
-    </header>
-    <div class="lista">
+            }
 
+            .screenScore h1{
+                padding:0 250px;
+            }
+        </style>
 
+        <h1>Pedra, Papel e Tesoura</h1>
+        <p>o jogador ganhou</p>
+        <hr>
 
-    </div>
-    <div class="total">
-        <h1>Total:R$ 0</h1>
-    </div>
-    <div class="lista-cadastro">
-        <input type="text" required name="nome_produto" placeholder="nome do produto..." />
-        <input type="number" required name="quantity" placeholder="quantidade"/>
-        <input type="number" required name="valor_produto" placeholder="valor do produto" />
-        <input type="submit" name="enviar" value="Aplicar" />
-    </div>
+        <div class="screenScore">
+            <h1>player1</h1>
+            <h1>enemy1</h1>
+        </div>
+        <div class="align">
+            <div class="player-options">
+                <div><img opt="pedra" src="rock.png"/></div>
+                <div><img opt="papel" src="paper.png"/></div>
+                <div><img opt="tesoura" src="scissor.png"/></div>
+    
+            </div>
+            <div class="enemy-options">
+                <div><img opt="pedra" src="rock.png"/></div>
+                <div><img opt="papel" src="paper.png"/></div>
+                <div><img opt="tesoura" src="scissor.png"/></div>
+            </div>
+        </div>
 
-    <button class="limpar">Limpar lista</button>
-
-    <script src="supermercado.js"></script>
-</body>
-
+        <script src="pedra.js"></script>
+    </body>
 </html>
