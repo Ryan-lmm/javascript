@@ -1,73 +1,51 @@
 <html>
     <head>
-
+        <title>perguntas e respostas</title>
     </head>
     <body>
-        <style>
-            h1{
-                text-align: center;
-            }
-
-            p{
-                text-align: center;
-                font-size:23px;
-
-            }
-
-            .player-options img,
-            .enemy-options img{
-                max-width: 200px;
-                opacity: 0.3;
-                cursor:pointer;
-                padding:2%;
-            }
-
-            .player-options,.enemy-options{
-                width:50%;
-                text-align: center;
-                padding-top:2%;
-            }
-
-            .align{
-                display:flex;
-                
-            }
-
-            .screenScore{
-
-                display: flex;
-                justify-content: center;
-                
-
-            }
-
-            .screenScore h1{
-                padding:0 250px;
-            }
-        </style>
-
-        <h1>Pedra, Papel e Tesoura</h1>
-        <p>o jogador ganhou</p>
-        <hr>
-
-        <div class="screenScore">
-            <h1>player1</h1>
-            <h1>enemy1</h1>
-        </div>
-        <div class="align">
-            <div class="player-options">
-                <div><img opt="pedra" src="rock.png"/></div>
-                <div><img opt="papel" src="paper.png"/></div>
-                <div><img opt="tesoura" src="scissor.png"/></div>
-    
-            </div>
-            <div class="enemy-options">
-                <div><img opt="pedra" src="rock.png"/></div>
-                <div><img opt="papel" src="paper.png"/></div>
-                <div><img opt="tesoura" src="scissor.png"/></div>
-            </div>
+        <div class="title">
+            <h1>Qual é o melhor site de programação</h1>
         </div>
 
-        <script src="pedra.js"></script>
+        <form class="perguntas">
+           <div class="respostas">
+            <span>Opção 1</span>
+            <input type="radio" name="pergunta1" value="correta">
+            <br>
+           </div>
+           <div class="respostas">
+            <span>Opção 2</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+           </div>
+           <div class="respostas">
+            <span>Opção 3</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+           </div>
+        </form>
+
+        <div class="title">
+            <h1>Qual é o melhor site de programação</h1>
+        </div>
+
+        <form class="perguntas">
+            <div class="respostas">
+                <span>Opção 1</span>
+                <input type="radio" name="pergunta1" value="correta">
+                <br>
+            </div>
+            <div class="respostas">
+                <span>Opção 2</span>
+                <input type="radio" name="pergunta1" value="incorreta">
+                <br>
+            </div>
+            <div class="respostas">
+                <span>Opção 3</span>
+                <input type="radio" name="pergunta1" value="incorreta">
+                <br>
+            </div>
+        </form>
+        <script src="perguntaserespostas.js"></script>
     </body>
 </html>
